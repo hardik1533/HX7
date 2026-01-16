@@ -1,4 +1,3 @@
-
 # HX7 — Legacy & Empire of Supercars 🏎️🔥
 
 HX7 is a cinematic, motion-driven supercar showcase built to celebrate **automotive legends** and **modern hypercar empires**.  
@@ -11,8 +10,8 @@ The project blends **bold typography, smooth animations, and luxury UI design** 
 ## 🚀 Live Demo
 
 👉 **Live Website:**  
-https://hx7-demo.vercel.app  
-_(Replace this link with your actual deployment URL)_
+[](https://hx7.netlify.app/)  
+
 
 ---
 
@@ -75,7 +74,7 @@ HX7/
 │   │   ├── brandslogo/
 │   │   ├── empire/
 │   │   ├── legacy/
-│   │   ├── navigation/
+│   │   ├── navimage/
 │   │   └── HomeVideo.mp4
 │   │
 │   └── fonts/
@@ -85,7 +84,7 @@ HX7/
 │   │   ├── BottomImage.jsx
 │   │   ├── Hyperspeed.jsx
 │   │   ├── ScrollVelocity.jsx
-│   │   └── Stairjsx.jsx
+│   │   └── Stair.jsx
 │   │
 │   ├── components/
 │   │   ├── empire/
@@ -136,7 +135,7 @@ HX7/
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/hx7.git
+git clone https://github.com/hardik1533/hx7.git
 
 # Navigate to project directory
 cd hx7
@@ -158,8 +157,6 @@ HX7 can be deployed easily on:
 * **Netlify**
 * **Cloudflare Pages**
 
-After deployment, update the **Live Demo link** in this README.
-
 ---
 
 ## 📸 Assets & Media
@@ -180,7 +177,7 @@ All car brand names, logos, and trademarks belong to their respective owners.
 ## 👑 Author
 
 **Hardik Vanza**
-Frontend Developer | Motion UI Enthusiast
+Frontend Developer 
 
 If you like this project, consider giving it a ⭐ on GitHub.
 
