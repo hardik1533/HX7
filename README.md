@@ -1,7 +1,4 @@
 
----
-
-```md
 # HX7 — Legacy & Empire of Supercars 🏎️🔥
 
 HX7 is a high-end automotive showcase web experience built to celebrate **legendary legacy cars** and **modern hypercar empires**.  
@@ -158,4 +155,3 @@ If you like this project, don’t forget to ⭐ the repository!
 
 ```
 
----
