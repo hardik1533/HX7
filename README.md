@@ -10,7 +10,7 @@ The project blends **bold typography, smooth animations, and luxury UI design** 
 ## 🚀 Live Demo
 
 👉 **Live Website:**  
-[](https://hx7.netlify.app/)  
+https://hx7.netlify.app/  
 
 
 ---
