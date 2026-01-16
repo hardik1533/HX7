@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+
+@font-face {
+    font-family: font1;
+    src: url('/fonts/Lausanne-300.woff2');
+}
+@font-face {
+    font-family: font2;
+    src: url('/fonts/Lausanne-500.woff2');
+}
+
+.moveX {
+    animation-name: moveAnimation;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.movelink{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .movelink {
+    opacity: 1;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.parent {
+    background-color: #fdfdfd;
+    color: #000;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* Keep layout height but hide overflow; animate inner content with transforms for smoothness */
+.bottomcard{
+    overflow: hidden;
+}
+
+.bottomcard-inner{
+    will-change: transform, opacity;
+    transform-origin: top center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
