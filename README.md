@@ -1,8 +1,8 @@
 
 # HX7 — Legacy & Empire of Supercars 🏎️🔥
 
-HX7 is a high-end automotive showcase web experience built to celebrate **legendary legacy cars** and **modern hypercar empires**.  
-The project blends **cinematic visuals, smooth motion, and bold typography** to deliver a premium, next-gen car culture platform.
+HX7 is a cinematic, motion-driven supercar showcase built to celebrate **automotive legends** and **modern hypercar empires**.  
+The project blends **bold typography, smooth animations, and luxury UI design** inspired by brands like BMW M, AMG, Bugatti, and Ferrari.
 
 > _Legacy builders. Empire rulers._
 
@@ -16,52 +16,51 @@ _(Replace this link with your actual deployment URL)_
 
 ---
 
-## 🧠 Concept
+## 🧠 Project Concept
 
-HX7 is divided into two philosophical worlds:
+HX7 is divided into two worlds:
 
-- **LEGACY** — Icons that shaped automotive history  
-- **EMPIRE** — Modern machines ruling speed, technology, and the future  
+- **LEGACY** — Iconic cars that shaped automotive history  
+- **EMPIRE** — Modern hypercars dominating speed, technology, and design  
 
-Each section is crafted with motion-first design and minimal UI to keep the focus on **power, performance, and presence**.
+Each section is crafted with cinematic motion and minimal UI to keep the focus on **power, performance, and presence**.
 
 ---
 
 ## ✨ Key Features
 
-- ⚡ Cinematic hero sections with immersive visuals  
-- 🏁 Legacy & Empire car categorization  
-- 🌀 Hyperspeed animated backgrounds  
-- 🎯 Smooth scroll & interaction animations  
-- 🖼️ Brand showcase with official redirects  
-- 📱 Fully responsive & modern layout  
-- 🖤 Dark luxury theme inspired by BMW M / AMG / Bugatti
+- ⚡ Cinematic hero sections
+- 🏁 Legacy & Empire car showcases
+- 🌀 Hyperspeed animated backgrounds
+- 🎯 GSAP-powered smooth animations
+- 🖼️ Brand logo grid with official website redirects
+- 📱 Fully responsive design
+- 🖤 Luxury dark theme with bold typography
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **React.js** — Component-based UI
-- **Tailwind CSS** — Utility-first styling
-- **GSAP** — Advanced animations & transitions
-- **React Bits Library** — Motion & UI effects
-- **Vite** — Fast development & build tooling
+- **React.js**
+- **Vite**
+- **Tailwind CSS**
 
-### Animation & Effects
-- GSAP ScrollTrigger
-- Hyperspeed motion presets
-- Custom hover & reveal animations
+### Animation & Motion
+- **GSAP**
+- **GSAP ScrollTrigger**
+- **React Bits Library**
+- Custom motion components (Hyperspeed, ScrollVelocity)
 
 ---
 
 ## 🎨 Typography & Design
 
-- **Primary Font:** Bebas Neue (Headings)
-- **Secondary Font:** Satoshi (Body & UI)
-- High contrast typography
-- Minimal UI with bold hierarchy
+- **Headings:** Bebas Neue
+- **Body & UI:** Satoshi
+- High-contrast layout
 - Automotive editorial style
+- Minimal, premium UI
 
 ---
 
@@ -69,27 +68,65 @@ Each section is crafted with motion-first design and minimal UI to keep the focu
 
 ```
 
-src/
-│── assets/
-│   ├── images/
-│   └── logos/
+HX7/
+│── public/
+│   ├── assets/
+│   │   ├── images/
+│   │   ├── brandslogo/
+│   │   ├── empire/
+│   │   ├── legacy/
+│   │   ├── navigation/
+│   │   └── HomeVideo.mp4
+│   │
+│   └── fonts/
 │
-│── components/
-│   ├── legacy/
-│   ├── empire/
-│   ├── brands/
+│── src/
+│   ├── common/
+│   │   ├── BottomImage.jsx
+│   │   ├── Hyperspeed.jsx
+│   │   ├── ScrollVelocity.jsx
+│   │   └── Stairjsx.jsx
+│   │
+│   ├── components/
+│   │   ├── empire/
+│   │   │   ├── Bottom.jsx
+│   │   │   ├── TopImage.jsx
+│   │   │   └── TopText.jsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── BottomText.jsx
+│   │   │   ├── HeroText.jsx
+│   │   │   └── Video.jsx
+│   │   │
+│   │   └── legacy/
+│   │       ├── Bottom.jsx
+│   │       ├── TopImage.jsx
+│   │       └── TopText.jsx
+│   │
+│   ├── context/
+│   │   └── ContextNav.jsx
+│   │
+│   ├── navigation/
+│   │   ├── FullScreenNav.jsx
+│   │   └── Navbar.jsx
+│   │
+│   ├── pages/
+│   │   ├── Brands.jsx
+│   │   ├── Empire.jsx
+│   │   ├── Home.jsx
+│   │   └── Legacy.jsx
+│   │
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 │
-│── common/
-│   ├── Hyperspeed.jsx
-│   ├── InfiniteMenu.jsx
-│
-│── pages/
-│   ├── Home.jsx
-│   ├── Legacy.jsx
-│   └── Empire.jsx
-│
-│── App.jsx
-│── main.jsx
+│── .gitignore
+│── eslint.config.js
+│── index.html
+│── package.json
+│── package-lock.json
+│── vite.config.js
+│── README.md
 
 ````
 
@@ -101,13 +138,13 @@ src/
 # Clone the repository
 git clone https://github.com/your-username/hx7.git
 
-# Navigate to project folder
+# Navigate to project directory
 cd hx7
 
 # Install dependencies
 npm install
 
-# Start development server
+# Run development server
 npm run dev
 ````
 
@@ -115,37 +152,37 @@ npm run dev
 
 ## 🌐 Deployment
 
-You can deploy HX7 easily using:
+HX7 can be deployed easily on:
 
 * **Vercel**
 * **Netlify**
 * **Cloudflare Pages**
 
-Just update the **Live Demo link** in this README after deployment.
+After deployment, update the **Live Demo link** in this README.
 
 ---
 
 ## 📸 Assets & Media
 
-* All brand logos are locally stored for reliability
-* Car visuals are optimized for high-resolution displays
-* Designed for cinematic full-screen sections
+* All car images and brand logos are stored locally
+* High-resolution assets optimized for cinematic layouts
+* Background videos and animations used for immersive experience
 
 ---
 
 ## ⚠️ Disclaimer
 
-HX7 is a **conceptual showcase project** created for learning, design exploration, and portfolio purposes.
-All car brand names and trademarks belong to their respective owners.
+HX7 is a **conceptual and portfolio project**.
+All car brand names, logos, and trademarks belong to their respective owners.
 
 ---
 
 ## 👑 Author
 
 **Hardik Vanza**
-Frontend Developer | Motion UI
+Frontend Developer | Motion UI Enthusiast
 
-If you like this project, don’t forget to ⭐ the repository!
+If you like this project, consider giving it a ⭐ on GitHub.
 
 ---
 
@@ -154,4 +191,3 @@ If you like this project, don’t forget to ⭐ the repository!
 **Built for speed. Designed for legacy.**
 
 ```
-
