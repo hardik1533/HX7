@@ -1,33 +1,53 @@
 import { useRef, useEffect } from "react";
+import { ScrollTrigger } from "gsap/all";
 
 const Video = () => {
   const videoRef = useRef(null);
+  const soundEnabled = useRef(false);
 
   useEffect(() => {
-    const enableSound = () => {
+    const enableSoundSmooth = () => {
+      if (soundEnabled.current) return;
+
       const video = videoRef.current;
       if (!video) return;
 
-      video.muted = false;
-      video.volume = 1;
-      video.play();
+      soundEnabled.current = true;
 
-      window.removeEventListener("scroll", enableSound);
-      window.removeEventListener("click", enableSound);
-      window.removeEventListener("mousemove", enableSound);
-      window.removeEventListener("touchstart", enableSound);
+      // 🔊 Unmute safely
+      video.muted = false;
+      video.volume = 0;
+      video.play().catch(() => {});
+
+      // 🎚️ Smooth volume fade-in (NO LAG)
+      let vol = 0;
+      const fade = setInterval(() => {
+        vol += 0.05;
+        video.volume = Math.min(vol, 1);
+        if (vol >= 1) clearInterval(fade);
+      }, 40); // ~800ms fade
+
+      // 🧠 GSAP refresh to avoid scroll jitter
+      ScrollTrigger.refresh();
+
+      // 🧹 Remove listeners after first interaction
+      window.removeEventListener("scroll", enableSoundSmooth);
+      window.removeEventListener("click", enableSoundSmooth);
+      window.removeEventListener("touchstart", enableSoundSmooth);
+      window.removeEventListener("mousemove", enableSoundSmooth);
     };
 
-    window.addEventListener("scroll", enableSound, { once: true });
-    window.addEventListener("click", enableSound, { once: true });
-    window.addEventListener("mousemove", enableSound, { once: true });
-    window.addEventListener("touchstart", enableSound, { once: true });
+    // 👆 First user interaction = sound unlock
+    window.addEventListener("scroll", enableSoundSmooth, { once: true });
+    window.addEventListener("click", enableSoundSmooth, { once: true });
+    window.addEventListener("touchstart", enableSoundSmooth, { once: true });
+    window.addEventListener("mousemove", enableSoundSmooth, { once: true });
 
     return () => {
-      window.removeEventListener("scroll", enableSound);
-      window.removeEventListener("click", enableSound);
-      window.removeEventListener("mousemove", enableSound);
-      window.removeEventListener("touchstart", enableSound);
+      window.removeEventListener("scroll", enableSoundSmooth);
+      window.removeEventListener("click", enableSoundSmooth);
+      window.removeEventListener("touchstart", enableSoundSmooth);
+      window.removeEventListener("mousemove", enableSoundSmooth);
     };
   }, []);
 
