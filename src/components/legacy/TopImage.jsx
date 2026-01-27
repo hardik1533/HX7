@@ -26,7 +26,7 @@ const TopImage = () => {
                         invalidateOnRefresh: true,
                         onUpdate: (elem) => {
                             const imageIndex = Math.floor(elem.progress * 9);
-                            imageRef.current.src = `assets/images/legacy/topimages/${imageIndex}.png`;
+                            imageRef.current.src = `/assets/images/legacy/topimages/${imageIndex}.png`;
                         },
                     },
                 });
