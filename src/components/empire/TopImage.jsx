@@ -26,7 +26,7 @@ const TopImage = () => {
                         invalidateOnRefresh: true,
                         onUpdate: (elem) => {
                             const imageIndex = Math.floor(elem.progress * 9);
-                            imageRef.current.src = `assets/images/empire/topimages/${imageIndex}.png`;
+                            imageRef.current.src = `/assets/images/empire/topimages/${imageIndex}.png`;
                         },
                     },
                 });
@@ -46,7 +46,7 @@ const TopImage = () => {
                         invalidateOnRefresh: true,
                         onUpdate: (elem) => {
                             const imageIndex = Math.floor(elem.progress * 9);
-                            imageRef.current.src = `assets/images/empire/topimages/${imageIndex}.png`;
+                            imageRef.current.src = `/assets/images/empire/topimages/${imageIndex}.png`;
                         },
                     },
                 });
@@ -65,7 +65,7 @@ const TopImage = () => {
                 <img
                     ref={imageRef}
                     className="h-full w-full object-cover"
-                    src="assets/images/empire/topimages/0.png"
+                    src="/assets/images/empire/topimages/0.png"
                     alt="Empire Cars"
                 />
         </div>
