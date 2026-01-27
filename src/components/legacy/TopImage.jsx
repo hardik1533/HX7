@@ -1,7 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 const TopImage = () => {
     gsap.registerPlugin(ScrollTrigger);
@@ -9,17 +9,7 @@ const TopImage = () => {
     const imageDivRef = useRef(null);
     const imageRef = useRef(null);
 
-    // ✅ PRELOAD IMAGES (Netlify delay fix)
-    useEffect(() => {
-        for (let i = 0; i < 9; i++) {
-            const img = new Image();
-            img.src = `/assets/images/legacy/topimages/${i}.png`;
-        }
-    }, []);
-
     useGSAP(() => {
-        let lastIndex = -1;
-
         const mm = ScrollTrigger.matchMedia({
             // Desktop
             "(min-width: 768px)": () => {
@@ -35,19 +25,11 @@ const TopImage = () => {
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
                         onUpdate: (elem) => {
-                            const imageIndex = Math.min(
-                                8,
-                                Math.floor(elem.progress * 9)
-                            );
-
-                            if (imageIndex !== lastIndex) {
-                                imageRef.current.src = `/assets/images/legacy/topimages/${imageIndex}.png`;
-                                lastIndex = imageIndex;
-                            }
+                            const imageIndex = Math.floor(elem.progress * 9);
+                            imageRef.current.src = `assets/images/legacy/topimages/${imageIndex}.png`;
                         },
                     },
                 });
-
                 return () => trigger.scrollTrigger?.kill();
             },
 
@@ -59,27 +41,20 @@ const TopImage = () => {
                         start: "top 64%",
                         end: "top 0%",
                         scrub: true,
+                        // markers:true,
                         anticipatePin: 1,
                         invalidateOnRefresh: true,
                         onUpdate: (elem) => {
-                            const imageIndex = Math.min(
-                                8,
-                                Math.floor(elem.progress * 9)
-                            );
-
-                            if (imageIndex !== lastIndex) {
-                                imageRef.current.src = `/assets/images/legacy/topimages/${imageIndex}.png`;
-                                lastIndex = imageIndex;
-                            }
+                            const imageIndex = Math.floor(elem.progress * 9);
+                            imageRef.current.src = `/assets/images/legacy/topimages/${imageIndex}.png`;
                         },
                     },
                 });
-
                 return () => trigger.scrollTrigger?.kill();
             },
         });
 
-        return () => mm.revert();
+        return () => mm.revert(); // cleanup on unmount
     });
 
     return (
