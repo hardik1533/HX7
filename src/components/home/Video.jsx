@@ -1,9 +1,6 @@
-
-
 const Video = () => {
-
   return (
-    <div className="h-full w-full ">
+    <div className="h-full w-full">
       <video
         className="h-full w-full object-cover"
         autoPlay
@@ -12,7 +9,7 @@ const Video = () => {
         playsInline
         preload="auto"
         src="/assets/HomeVideo.mp4"
-      ></video>
+      />
     </div>
   );
 };
