@@ -5,6 +5,7 @@ import Empire from "./pages/Empire";
 import Navbar from "./navigation/Navbar";
 import FullScreenNav from "./navigation/FullScreenNav";
 import { Route, Routes } from "react-router";
+import NotFound from "./pages/NotFound";
 
 
 const App = () => {
@@ -17,6 +18,8 @@ const App = () => {
                 <Route path="/brands" element={<Brands/>} />
                 <Route path="/legacy" element={<Legacy/>} />
                 <Route path="/empire" element={<Empire/>} />
+
+                <Route path="*" element={<NotFound/>} />
             </Routes>
         </div>
     );
