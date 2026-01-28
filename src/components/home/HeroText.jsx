@@ -11,7 +11,7 @@ const HeroText = () => {
       <div className="lg:text-[9.5vw] text-[12vw] uppercase lg:leading-[9.7vw] leading-[10vw] justify-center flex items-start">
         for
         <div className="h-[7vw] w-[16vw] rounded-full lg:mt-2 mt-1 overflow-hidden">
-          <Video />
+          <Video rounded />
         </div>
         Bright
       </div>
