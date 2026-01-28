@@ -7,9 +7,11 @@ const Video = () => {
         loop
         muted
         playsInline
-        preload="auto"
-        src="/assets/HomeVideo.mp4"
-      />
+        preload="metadata"
+        poster="/assets/video-poster.jpg"
+      >
+        <source src="/assets/HomeVideo.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 };
